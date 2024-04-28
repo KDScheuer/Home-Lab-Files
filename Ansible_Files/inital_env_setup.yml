@@ -2,32 +2,10 @@
 - name: Set Initial Host Configurations
   hosts: all
   gather_facts: true
+  become: yes
 
   tasks:
     - name: Set Timezone to Mountain Time
       timezone: 
         name: America/Boise
-
-    - name: Ensure NTP Service is Running
-      service:
-        name: ntp
-        state: started
-        enabled: yes
-
-    - name: Set DNS Servers
-      nmcli:
-        name: 'DNS'
-        value: '8.8.8.8'
-        state: present
-
-    - name: Stop and Disable Firewalld Service
-      systemd:
-        name: firewalld
-        state: stopped
-        enabled: no
-
-    - name: Set SELinux to Permissive
-      selinux:
-        policy: targeted
-        state: permissive
 
