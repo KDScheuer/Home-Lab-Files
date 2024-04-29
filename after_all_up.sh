@@ -16,18 +16,10 @@
         success=true
         break
       else
-        echo "Failed to copy and append $key, retrying..."
         ((retries--))
-        sleep 30  # Adjust the sleep time as needed
+        sleep 30
       fi
     done
-    if [ "$success" = true ]; then
-      echo "Successfully copied and appended $key"
-    else
-      echo "Failed to copy and append $key after multiple attempts, exiting..."
-      exit 1
-    fi
-  done
 }
 
 # Call the function
