@@ -13,9 +13,10 @@
   elif [ "$(hostname)" = "ubuntu2" ]; then
     sleep 120
   elif [ "$(hostname)" = "ubuntu3" ]; then
+    git clone https://github.com/KDScheuer/Home-Lab-Files.git
+    sleep 10
     sudo apt install ansible -y
     sleep 60
-    git clone https://github.com/KDScheuer/Home-Lab-Files.git
   fi
 
   # Copys all public keys into ~/.ssh and puts them as authorized_keys
