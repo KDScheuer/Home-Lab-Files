@@ -14,6 +14,7 @@
     sleep 120
   elif [ "$(hostname)" = "ubuntu3" ]; then
     sudo apt install ansible -y
+    sleep 60
     git clone https://github.com/KDScheuer/Home-Lab-Files.git
   fi
 
