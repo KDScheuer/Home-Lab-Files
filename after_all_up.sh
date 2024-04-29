@@ -1,18 +1,20 @@
 #!/bin/bash
 
-(sleep 60 & {
+(sleep 10 & {
   # Update was done during provisioning this upgrades and installs pip
   sudo apt upgrade -y
+  sleep 60
   sudo apt-get install python3-pip -y
+  sleep 60
 
   # Sleeping to Allow Time for Other Boxes to Become Up and Place Pub Key in Shared Folder
   if [ "$(hostname)" = "ubuntu1" ]; then
-    sleep 420
+    sleep 180
   elif [ "$(hostname)" = "ubuntu2" ]; then
-    sleep 360
+    sleep 120
   elif [ "$(hostname)" = "ubuntu3" ]; then
-    sleep 30
     sudo apt install ansible -y
+    sleep 60
     git clone https://github.com/KDScheuer/Home-Lab-Files.git
   fi
 
