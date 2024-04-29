@@ -17,6 +17,7 @@ Vagrant.configure("2") do |config|
       sudo apt-get install -y openssh-server
 
       sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+      sudo sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config
       sudo systemctl restart sshd
       ssh-keygen -t rsa -N "" -f /home/vagrant/.ssh/id_rsa
       sudo cp /home/vagrant/.ssh/id_rsa.pub /vagrant/keys/ubuntu1_id_rsa.pub
@@ -44,6 +45,7 @@ Vagrant.configure("2") do |config|
       sudo apt-get install -y openssh-server
 
       sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+      sudo sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config
       sudo systemctl restart sshd
       ssh-keygen -t rsa -N "" -f /home/vagrant/.ssh/id_rsa
       sudo cp /home/vagrant/.ssh/id_rsa.pub /vagrant/keys/ubuntu2_id_rsa.pub
@@ -72,6 +74,7 @@ Vagrant.configure("2") do |config|
       sudo apt-get install -y openssh-server
 
       sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+      sudo sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config
       sudo systemctl restart sshd
       ssh-keygen -t rsa -N "" -f /home/vagrant/.ssh/id_rsa
       sudo cp /home/vagrant/.ssh/id_rsa.pub /vagrant/keys/ubuntu3_id_rsa.pub
